@@ -25,7 +25,7 @@ def get_data(ticker):
 # 计算技术指标
 def calculate_technical_indicators(data):
     data['SMA'] = data['Adj Close'].rolling(window=20).mean()
-    data['RSI'] = talib.RSI(data['Adj Close'], timeperiod=14)
+    # data['RSI'] = talib.RSI(data['Adj Close'], timeperiod=14)
     data.dropna(inplace=True)
     return data
 
@@ -35,7 +35,8 @@ def select_stocks(ticker):
     data = calculate_technical_indicators(data)
 
     # 构建特征矩阵和标签向量
-    features = data[['SMA', 'RSI']]
+    # features = data[['SMA', 'RSI']]
+    features = data[['SMA']]
     labels = (data['Adj Close'].shift(-1) > data['Adj Close']).astype(int)
 
     # 划分训练集和测试集
@@ -52,4 +53,8 @@ def select_stocks(ticker):
     accuracy = clf.score(X_test, y_test)
 
     return accuracy
+
+if __name__ == "__main__":
+    acc = select_stocks("BABA")
+    print(acc)
 
