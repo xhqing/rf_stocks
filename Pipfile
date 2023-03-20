@@ -9,6 +9,7 @@ pandas = "*"
 bs4 = "*"
 yfinance = "*"
 scikit-learn = "*"
+ipykernel = "*"
 
 [dev-packages]
 
