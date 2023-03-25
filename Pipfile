@@ -10,6 +10,7 @@ bs4 = "*"
 yfinance = "*"
 scikit-learn = "*"
 ipykernel = "*"
+matplotlib = "*"
 
 [dev-packages]
 
