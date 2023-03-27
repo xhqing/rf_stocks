@@ -2,7 +2,7 @@ import yfinance as yf
 
 # 下载股票数据并保存到本地文件
 def download_data(ticker, path):
-    data = yf.download(ticker, start='2023-03-24', end='2023-03-25')
+    data = yf.download(ticker, start='2023-03-27', end='2023-03-28')
     data.to_csv(path)
     return data
 

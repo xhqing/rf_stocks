@@ -11,6 +11,8 @@ yfinance = "*"
 scikit-learn = "*"
 ipykernel = "*"
 matplotlib = "*"
+numpy = "*"
+scipy = "*"
 
 [dev-packages]
 
